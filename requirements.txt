@@ -1,0 +1,4 @@
+django~=4.2.6
+celery~=5.3.4
+telebot~=0.0.5
+djangorestframework~=3.14.0

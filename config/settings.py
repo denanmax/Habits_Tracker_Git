@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -91,7 +91,6 @@ DATABASES = {
         'USER': os.getenv('DATABASES_USER'),
         'PASSWORD': os.getenv('DATABASES_PASSWORD'),
         'HOST': os.getenv('DATABASES_HOST'),
-        'PORT': 5432,
     }
 }
 
@@ -118,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -153,15 +152,14 @@ SIMPLE_JWT = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://read-only.example.com",
-    "https://read-and-write.example.com",
+    "http://localhost:8000",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://read-and-write.example.com",
+    "http://localhost:8000",
 ]
 
 API_TELEGRAM = os.getenv('TG_API_KEY')
 
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
-CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"
